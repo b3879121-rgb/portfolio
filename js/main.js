@@ -22,7 +22,7 @@ const PROJECTS = [
       '排行榜與管理後台，用數據找出玩家卡關點',
       '部署在 Render（免費主機閒置會休眠，第一次開啟約需 30–60 秒）'
     ],
-    links: [{ label: '線上試玩', url: 'https://bank-quest.onrender.com/' }],
+    links: [{ label: '線上試玩（首次開啟約 30 秒）', url: 'https://bank-quest.onrender.com/' }],
     badge: 'LIVE'
   },
   {
