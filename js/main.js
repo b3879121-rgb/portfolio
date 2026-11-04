@@ -169,7 +169,6 @@ const SKILLS = [
   { icon: 'chart', name: '行銷與文書', items: ['Google Ads 認證', 'Analytics 認證', 'SEO', 'Word', 'Excel', 'PowerPoint'] }
 ];
 
-const TYPED_WORDS = ['專案經理 × AI 應用工程師', 'Python 全端開發', 'n8n 自動化流程', '影音企劃與設計'];
 
 // ===== 小工具 =====
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -308,22 +307,6 @@ function countUp(el) {
   requestAnimationFrame(step);
 }
 
-function startTyping() {
-  const el = $('#typed');
-  if (reduceMotion) return;
-  let wordIndex = 0;
-  let charIndex = TYPED_WORDS[0].length;
-  let deleting = true;
-  const tick = () => {
-    const word = TYPED_WORDS[wordIndex];
-    let delay = deleting ? 45 : 110;
-    if (!deleting && charIndex === word.length) { deleting = true; delay = 2200; }
-    else if (deleting && charIndex === 0) { deleting = false; wordIndex = (wordIndex + 1) % TYPED_WORDS.length; delay = 300; }
-    else { charIndex += deleting ? -1 : 1; el.textContent = TYPED_WORDS[wordIndex].slice(0, charIndex); }
-    setTimeout(tick, delay);
-  };
-  setTimeout(tick, 2600);
-}
 
 // ===== 導覽列 =====
 function setupNav() {
@@ -387,7 +370,6 @@ document.addEventListener('DOMContentLoaded', () => {
   $('#year').textContent = new Date().getFullYear();
 
   $$('[data-count]').forEach(countUp);
-  startTyping();
   observeReveal($$('.org, .skill, .profile__text, .photo, .contact__box'));
   setupNav();
   setupSpotlight();
