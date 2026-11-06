@@ -26,6 +26,20 @@ const PROJECTS = [
     badge: 'LIVE'
   },
   {
+    id: 'safefactory', cat: 'dev', title: '智慧工地 AIoT 工安監控系統', img: 'assets/img/safefactory.jpg', imgPos: 'center top',
+    tags: ['YOLO11', 'MQTT', 'FastAPI', 'OpenCV', 'IoT'],
+    desc: '以 YOLO 影像辨識偵測未戴安全帽、未穿反光背心與闖入危險區域，透過 MQTT 連動警報燈並自動拍照存證；環境溫度過高時，自動通知攝影機進入加強巡檢。',
+    points: [
+      '自行訓練安全帽 / 反光背心模型（YOLO11，背心 mAP50 0.91、安全帽 0.86）',
+      '人員追蹤 + 連續幀確認，降低誤報；違規照片自動存證',
+      'AI → IoT：違規事件經 MQTT 觸發警報塔燈與蜂鳴器',
+      'IoT → AI：溫度連續超標時，攝影機自動進入加強巡檢並定時拍照',
+      'FastAPI + WebSocket 即時儀表板，可在畫面上直接重畫危險禁區'
+    ],
+    links: [{ label: 'GitHub 原始碼', url: 'https://github.com/b3879121-rgb/auto-seen' }],
+    badge: 'GitHub'
+  },
+  {
     id: 'snq', cat: 'pm', title: '三總北投分院 SNQ 國家品質標章專案', img: 'assets/img/snq.jpg', imgPos: 'center 20%',
     tags: ['專案經理', '跨部門整合', '醫療品質'],
     desc: '擔任社區精神醫療 SNQ 申請專案經理，整合跨單位資料與成果影片，帶領團隊獲得 2025 國家生技醫療品質獎銅獎。',
@@ -164,7 +178,7 @@ const SKILLS = [
   { icon: 'pm', name: '專案管理', items: ['需求拆解', 'SOP 建立', '跨部門協調', '數據分析'] },
   { icon: 'code', name: '全端開發', items: ['Python', 'Flask', 'SQLite', 'JavaScript', 'HTML/CSS', 'SQL', 'Render', 'GitHub Pages'] },
   { icon: 'ai', name: 'AI 工具', items: ['Claude Code', 'Codex', 'ChatGPT', 'AI Agent', 'RAG', 'NotebookLM', 'Nano Banana', 'Kling'] },
-  { icon: 'flow', name: '自動化', items: ['n8n', 'LINE Messaging API', '排程自動化', 'Playwright', 'ffmpeg'] },
+  { icon: 'flow', name: '自動化與 IoT', items: ['n8n', 'LINE Messaging API', 'MQTT', 'YOLO 影像辨識', '排程自動化', 'Playwright', 'ffmpeg'] },
   { icon: 'design', name: '設計與影音', items: ['Photoshop', 'Figma', 'Premiere Pro', 'After Effects', 'Canva', 'Blender'] },
   { icon: 'chart', name: '行銷與文書', items: ['Google Ads 認證', 'Analytics 認證', 'SEO', 'Word', 'Excel', 'PowerPoint'] }
 ];
