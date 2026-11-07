@@ -5,12 +5,29 @@
 // ===== 資料 =====
 
 
-const CAT_NAMES = { dev: '產品開發', pm: '專案與行銷', media: '影音製作', design: '平面設計' };
+const CAT_NAMES = { dev: '產品開發', pm: '行銷與數據', media: '影音製作', design: '平面設計' };
 
 const drive = (id) => `https://drive.google.com/file/d/${id}/view`;
 
 // 順序就是畫面上的順序；第一件會放大成精選
 const PROJECTS = [
+  {
+    id: 'feedback', cat: 'pm', title: '顧客回饋洞察：街口支付 App 評論分析', img: 'assets/img/feedback.jpg', imgPos: 'center top',
+    tags: ['顧客聲音分析', '洞察報告', 'Python', 'jieba', 'scikit-learn'],
+    desc: '分析街口支付 App Store 最近 500 則公開評論，把雜亂的評論整理成主題、負評比例與優先處理清單，並提出改善建議。',
+    points: [
+      '找出最大痛點：系統不穩（閃退、打不開）是最多人抱怨的主題，2026 年占比升到 38%',
+      '登入與身分驗證的負評比例最高（86%），建議改善驗證說明與進度通知',
+      '發現平均 4.6 星的評論多是推薦碼貼文，評估滿意度時應分開看',
+      '用星等驗證情緒判斷，準確率從 37% 提升到約 70%；主題改為可編輯的關鍵字規則，「其他」只占 9%',
+      '平台可匯入任何評論 CSV：自動分主題、判斷正負評、排出優先順序，每個結論都能點回原文'
+    ],
+    links: [
+      { label: '洞察報告', url: 'https://b3879121-rgb.github.io/feedback-insight/' },
+      { label: 'GitHub 原始碼', url: 'https://github.com/b3879121-rgb/feedback-insight' }
+    ],
+    badge: 'LINK'
+  },
   {
     id: 'bank', cat: 'dev', title: '幸福銀行 金融任務 Bank Quest', img: 'assets/img/bank.jpg',
     tags: ['Python', 'Flask', 'SQLite', 'RAG', 'Render'],
@@ -191,12 +208,12 @@ const ICONS = {
 };
 
 const SKILLS = [
-  { icon: 'pm', name: '專案管理', items: ['需求拆解', 'SOP 建立', '跨部門協調', '數據分析'] },
-  { icon: 'code', name: '全端開發', items: ['Python', 'Flask', 'SQLite', 'JavaScript', 'HTML/CSS', 'SQL', 'Render', 'GitHub Pages'] },
-  { icon: 'ai', name: 'AI 工具', items: ['Claude Code', 'Codex', 'ChatGPT', 'AI Agent', 'RAG', 'NotebookLM', 'Nano Banana', 'Kling'] },
-  { icon: 'flow', name: '自動化與 IoT', items: ['n8n', 'LINE Messaging API', 'MQTT', 'YOLO 影像辨識', 'pandas', 'Claude API', '排程自動化', 'Playwright', 'ffmpeg'] },
-  { icon: 'design', name: '設計與影音', items: ['Photoshop', 'Figma', 'Premiere Pro', 'After Effects', 'Canva', 'Blender'] },
-  { icon: 'chart', name: '行銷與文書', items: ['Google Ads 認證', 'Analytics 認證', 'SEO', 'Word', 'Excel', 'PowerPoint'] }
+  { icon: 'chart', name: '行銷與數據', items: ['Google Analytics 認證', 'Google Ads 認證', 'SEO', 'YouTube／OTT 後台分析', '顧客評論分析', '新聞稿撰寫'] },
+  { icon: 'design', name: '設計與影音', items: ['短影音企劃', '拍攝與剪輯', 'Premiere Pro', 'After Effects', 'Photoshop', 'Figma', 'Canva', 'Blender'] },
+  { icon: 'pm', name: '專案管理', items: ['跨單位協調', 'SOP 建立', '時程追蹤', 'Word', 'Excel', 'PowerPoint'] },
+  { icon: 'ai', name: 'AI 工具', items: ['ChatGPT', 'Claude Code', 'Codex', 'NotebookLM', 'Nano Banana', 'Kling', 'AI Agent', 'RAG'] },
+  { icon: 'flow', name: '自動化', items: ['n8n', 'LINE Messaging API', 'pandas', 'Claude API', '排程自動化', 'Playwright', 'ffmpeg', 'MQTT', 'YOLO 影像辨識'] },
+  { icon: 'code', name: '程式開發', items: ['Python', 'Flask', 'SQLite', 'JavaScript', 'HTML/CSS', 'SQL', 'jieba', 'scikit-learn', 'Render', 'GitHub Pages'] }
 ];
 
 
@@ -377,7 +394,7 @@ function setupNav() {
 document.addEventListener('DOMContentLoaded', () => {
   renderSkills();
   renderProjects();
-  applyFilter('dev');
+  applyFilter('pm');
 
   $$('.tab').forEach((btn) => btn.addEventListener('click', () => applyFilter(btn.dataset.filter)));
   $('#projectGrid').addEventListener('click', (e) => {
