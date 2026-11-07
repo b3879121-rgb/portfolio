@@ -40,6 +40,22 @@ const PROJECTS = [
     badge: 'GitHub'
   },
   {
+    id: 'autoreport', cat: 'dev', title: 'AI 自動化營運週報', img: 'assets/img/autoreport.jpg', imgPos: 'center top',
+    tags: ['Python', 'pandas', 'Claude API', 'matplotlib', 'GitHub Actions'],
+    desc: '以 pandas 自動計算週營收、成長率與分店異常，Claude API 寫出主管重點與建議行動，一鍵產出一頁式 PDF，並透過 n8n / Email 每週一自動寄出。',
+    points: [
+      '把手動週報拆成撈資料、算指標、做圖表、寫重點、寄送五個步驟並自動化',
+      '分店營收低於前 4 週平均 20% 自動標為異常，並拆解跌幅最大的品類',
+      'Claude API 結構化輸出 5 點重點與 3 項建議行動；沒有 API key 時改用規則式摘要',
+      '支援 CSV / Google Sheets，Windows 排程與 GitHub Actions 每週一自動執行'
+    ],
+    links: [
+      { label: 'GitHub 原始碼', url: 'https://github.com/b3879121-rgb/auto-weekly-report' },
+      { label: '範例週報 PDF', url: 'https://github.com/b3879121-rgb/auto-weekly-report/blob/main/docs/sample_report.pdf' }
+    ],
+    badge: 'GitHub'
+  },
+  {
     id: 'snq', cat: 'pm', title: '三總北投分院 SNQ 國家品質標章專案', img: 'assets/img/snq.jpg', imgPos: 'center 20%',
     tags: ['專案經理', '跨部門整合', '醫療品質'],
     desc: '擔任社區精神醫療 SNQ 申請專案經理，整合跨單位資料與成果影片，帶領團隊獲得 2025 國家生技醫療品質獎銅獎。',
@@ -178,7 +194,7 @@ const SKILLS = [
   { icon: 'pm', name: '專案管理', items: ['需求拆解', 'SOP 建立', '跨部門協調', '數據分析'] },
   { icon: 'code', name: '全端開發', items: ['Python', 'Flask', 'SQLite', 'JavaScript', 'HTML/CSS', 'SQL', 'Render', 'GitHub Pages'] },
   { icon: 'ai', name: 'AI 工具', items: ['Claude Code', 'Codex', 'ChatGPT', 'AI Agent', 'RAG', 'NotebookLM', 'Nano Banana', 'Kling'] },
-  { icon: 'flow', name: '自動化與 IoT', items: ['n8n', 'LINE Messaging API', 'MQTT', 'YOLO 影像辨識', '排程自動化', 'Playwright', 'ffmpeg'] },
+  { icon: 'flow', name: '自動化與 IoT', items: ['n8n', 'LINE Messaging API', 'MQTT', 'YOLO 影像辨識', 'pandas', 'Claude API', '排程自動化', 'Playwright', 'ffmpeg'] },
   { icon: 'design', name: '設計與影音', items: ['Photoshop', 'Figma', 'Premiere Pro', 'After Effects', 'Canva', 'Blender'] },
   { icon: 'chart', name: '行銷與文書', items: ['Google Ads 認證', 'Analytics 認證', 'SEO', 'Word', 'Excel', 'PowerPoint'] }
 ];
