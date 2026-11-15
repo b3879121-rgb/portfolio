@@ -106,6 +106,28 @@ const PROJECTS = [
     links: []
   },
   {
+    id: 'katana', cat: 'media', title: 'AI × 程式化產品廣告：MSI Katana 17 HX', img: 'assets/img/katana.jpg',
+    tags: ['Remotion', 'ComfyUI', 'Wan 2.2', 'AI 影像', '程式化配樂'],
+    desc: '以我自己使用的電腦品牌 MSI 為例，參考官方廣告風格，把 8 張產品圖做成 56 秒直式廣告：產品規格段落搭配 HUD 動態設計，穿插以本機 AI 生成的江戶武士鏡頭，呼應 Katana（武士刀）的品名。',
+    points: [
+      '「古刀 × 新刀」創意概念：江戶武士與電競筆電的古今反差，收在口號「斬破極限」',
+      '以 Remotion（React）程式化製作 HUD、故障轉場與規格字卡',
+      '江戶場景以本機 ComfyUI 生成：Juggernaut XL 生成畫面，Wan 2.2 轉成動態影片，零雲端費用',
+      '配樂以 Python 程式合成：電子節拍加上太鼓、三味線、尺八音色，鼓點對準每次轉場',
+      '個人練習作品，非 MSI 官方合作；產品圖與商標版權屬 MSI 所有'
+    ],
+    links: [{ label: '觀看影片', url: drive('1Uv8KhNLEY4iheucLl2tcxEp8lXm-ZASW') }],
+    badge: 'VIDEO'
+  },
+  {
+    id: 'engine', cat: 'media', title: '互動式 3D 教學：125cc 單缸四行程引擎', img: 'assets/img/engine.jpg',
+    tags: ['Three.js', '互動教學', '資料視覺化'],
+    desc: '可操作的 3D 引擎拆解網頁：切換外觀與剖視，播放進氣、壓縮、做功、排氣四個行程，儀表板即時顯示轉速、曲軸角度、活塞位置與汽缸壓力曲線。',
+    points: ['完整外觀／剖視切換', '四行程逐段播放、可調轉速', '即時儀表板與汽缸壓力曲線'],
+    links: [{ label: '線上互動', url: 'works/125cc-engine.html' }],
+    badge: 'LIVE'
+  },
+  {
     id: 'headphone', cat: 'media', title: '程式化 3D 產品動畫：耳機爆炸分解', img: 'assets/img/headphone.jpg',
     tags: ['Three.js', 'Playwright', 'ffmpeg'],
     desc: '45 秒產品動畫，以 Three.js 程式建模耳機並做出爆炸分解效果，Playwright 逐格擷取、ffmpeg 合成影片。',
